@@ -211,7 +211,7 @@ public class Comment extends FacebookType {
   @Getter
   @Setter
   @Facebook
-  private Attachment attachment;
+  private StoryAttachment attachment;
 
   private static final long serialVersionUID = 2L;
 
@@ -282,78 +282,5 @@ public class Comment extends FacebookType {
     public boolean removeData(Comment comment) {
       return data.remove(comment);
     }
-  }
-
-  /**
-   * Media data as applicable for the attachment.
-   *
-   * @author <a href="http://ityx.de">Jan Schweizer</a>
-   */
-  public static class Media extends FacebookType {
-    private static final long serialVersionUID = 1L;
-
-    @Getter
-    @Setter
-    @Facebook
-    private Image image;
-  }
-
-  /**
-   * Contains the attachment data for a specific comment (like an image or such)
-   *
-   * @author <a href="http://ityx.de">Jan Schweizer</a>
-   */
-  public static class Attachment extends FacebookType {
-
-    @Getter
-    @Setter
-    @Facebook
-    private String url;
-
-    @Getter
-    @Setter
-    @Facebook
-    private String title;
-
-    @Getter
-    @Setter
-    @Facebook
-    private String description;
-
-    @Getter
-    @Setter
-    @Facebook
-    private String type;
-
-    @Getter
-    @Setter
-    @Facebook("media")
-    private Media media;
-
-  }
-
-  /**
-   * Image data as applicable for the attachment
-   *
-   * @author <a href="http://ityx.de">Jan Schweizer</a>
-   */
-  public static class Image extends FacebookType {
-    private static final long serialVersionUID = 1L;
-
-    @Getter
-    @Setter
-    @Facebook
-    private Integer height;
-
-    @Getter
-    @Setter
-    @Facebook
-    private Integer width;
-
-    @Getter
-    @Setter
-    @Facebook
-    private String src;
-
   }
 }
